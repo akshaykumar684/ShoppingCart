@@ -1,28 +1,11 @@
 import appleImg from "../../../Resources/Images/apple.jpg";
 import "./Product.css";
 import Button from "../../UI/Button";
+import SideNavBar from "../../NavBar/SideNavBar/SideNavBar";
 const Product = () => {
   return (
     <main>
-      <aside>
-        <ul>
-          <li>
-            <a href="#">Fruits & Vegetables</a>
-          </li>
-          <li>
-            <a href="#">Bakery Cakes and Diary</a>
-          </li>
-          <li>
-            <a href="#">Beverages</a>
-          </li>
-          <li>
-            <a href="#">Beauty and Hygiene </a>
-          </li>
-          <li>
-            <a href="#">Baby Care</a>
-          </li>
-        </ul>
-      </aside>
+      <SideNavBar />
       <article className="product-container">
         <section className="product-card">
           <h1>Apple Washinton,Regular 4 Pcs</h1>

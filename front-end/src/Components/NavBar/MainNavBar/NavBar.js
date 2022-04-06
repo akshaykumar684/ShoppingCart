@@ -1,5 +1,5 @@
-import logo from "../../Resources/Images/logo.png";
-import cart from "../../Resources/Images/cart.svg";
+import logo from "../../../Resources/Images/logo.png";
+import cart from "../../../Resources/Images/cart.svg";
 import { NavLink } from "react-router-dom";
 import Styles from "./NavBar.module.css";
 const NavBar = () => {
