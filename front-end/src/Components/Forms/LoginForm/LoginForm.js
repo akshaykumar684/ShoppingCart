@@ -1,15 +1,37 @@
+import { useState } from "react";
 import "./LoginForm.css";
 import Button from "../../UI/Button";
+
+const initialLoginFormData = {
+  username: "",
+  password: "",
+};
 const LoginForm = () => {
+  const [loginFormData, setLoginFormData] = useState(initialLoginFormData);
+  const { username, password } = loginFormData;
+
+  const loginHandler = (event) => {
+    event.preventDefault();
+    console.log(loginFormData);
+  };
+
+  const loginFormInputDataChangeHandler = (event) => {
+    const formData = {
+      ...loginFormData,
+      [event.target.name]: event.target.value,
+    };
+    setLoginFormData(formData);
+  };
   return (
     <section className="login-form">
-      <form>
+      <form onSubmit={loginHandler}>
         <div className="floating-label-group">
           <input
             type="email"
             className="form-control"
-            autocomplete="off"
-            autofocus
+            onChange={loginFormInputDataChangeHandler}
+            name="username"
+            value={username}
             required
           />
           <label className="floating-label">Username</label>
@@ -18,13 +40,14 @@ const LoginForm = () => {
           <input
             type="password"
             className="form-control"
-            autocomplete="off"
+            onChange={loginFormInputDataChangeHandler}
+            name="password"
+            value={password}
             required
           />
           <label className="floating-label">Password</label>
         </div>
-        {/* <button>Login</button> */}
-        <Button title="Login" />
+        <Button btnType="submit" title="Login" />
       </form>
     </section>
   );
