@@ -1,0 +1,20 @@
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 10px 20px 0px #888888;
+  margin-bottom: 15px;
+}
+
+.categoryImg {
+  width: 400px;
+  height: 200px;
+}
+
+.productDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 15px;
+}
