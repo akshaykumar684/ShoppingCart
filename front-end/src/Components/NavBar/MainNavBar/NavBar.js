@@ -27,12 +27,12 @@ const NavBar = () => {
           <div>
             <ul>
               <li className={Styles.siginCartContainerListItem}>
-                <NavLink activeClassName={Styles.selectedRoute} to="/Home">
+                <NavLink activeClassName={Styles.selectedRoute} to="/login">
                   SignIn
                 </NavLink>
               </li>
               <li className={Styles.siginCartContainerListItem}>
-                <NavLink activeClassName={Styles.selectedRoute} to="/Home">
+                <NavLink activeClassName={Styles.selectedRoute} to="/signup">
                   Register
                 </NavLink>
               </li>
