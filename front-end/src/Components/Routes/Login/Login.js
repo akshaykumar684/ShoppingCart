@@ -1,5 +1,5 @@
 import "./Login.css";
-import Button from "../../UI/Button";
+import LoginForm from "../../Forms/LoginForm/LoginForm";
 
 const Login = () => {
   return (
@@ -10,31 +10,7 @@ const Login = () => {
           <p>Get access to your orders.Wishlist and Recommendations</p>
         </div>
       </section>
-      <section className="login-form">
-        <form>
-          <div className="floating-label-group">
-            <input
-              type="email"
-              className="form-control"
-              autocomplete="off"
-              autofocus
-              required
-            />
-            <label className="floating-label">Username</label>
-          </div>
-          <div className="floating-label-group">
-            <input
-              type="password"
-              className="form-control"
-              autocomplete="off"
-              required
-            />
-            <label className="floating-label">Password</label>
-          </div>
-          {/* <button>Login</button> */}
-          <Button title="Login" />
-        </form>
-      </section>
+      <LoginForm />
     </main>
   );
 };
