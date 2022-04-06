@@ -1,0 +1,25 @@
+.productCard {
+  height: 300px;
+  width: 300px;
+  margin-top: 20px;
+  box-shadow: 5px 0px 5px gray;
+  border-bottom: 2px dashed darkgray;
+}
+.productCardHeader {
+  text-align: center;
+  padding: 10px;
+}
+
+.produtDescription {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+  background-color: lightgray;
+}
+
+.produtDescriptionImg {
+  height: 160px;
+  width: 160px;
+  margin-left: 5px;
+  display: inline;
+}

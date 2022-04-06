@@ -62,7 +62,6 @@ article {
   margin-top: 20px;
   gap: 10px;
   background-color: lightgray;
-  /* padding: 0px 5px; */
 }
 
 .produt-description img {
@@ -70,15 +69,4 @@ article {
   width: 160px;
   margin-left: 5px;
   display: inline;
-}
-
-.Buy-Now-Button {
-  border-style: none;
-  height: 40px;
-  width: 100%;
-  margin-top: 20px;
-  background-color: darkred;
-  color: white;
-  font-weight: bold;
-  max-width: 300px;
 }
