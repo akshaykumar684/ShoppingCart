@@ -1,3 +1,14 @@
 .App {
   text-align: center;
 }
+
+a {
+  text-decoration: none;
+  padding: 5px;
+  font-weight: bold;
+  color: brown;
+}
+
+a:hover {
+  text-decoration: underline;
+}

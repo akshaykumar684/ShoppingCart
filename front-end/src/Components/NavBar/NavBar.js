@@ -1,38 +1,46 @@
 import logo from "../../Resources/Images/logo.png";
 import cart from "../../Resources/Images/cart.svg";
 import { NavLink } from "react-router-dom";
-import "./NavBar.css";
+import Styles from "./NavBar.module.css";
 const NavBar = () => {
   return (
     <header>
-      <div className="header-container">
-        <img src={logo} alt="Sabka Bazar" className="logo-img" />
+      <div className={Styles.headerContainer}>
+        <img src={logo} alt="Sabka Bazar" className={Styles.logoImg} />
         <div>
-          <nav className="home-product-nav">
+          <nav className={Styles.homeProductNav}>
             <ul>
-              <li>
-                <NavLink to="/Home">Home</NavLink>
+              <li className={Styles.homeProductNavListItem}>
+                <NavLink activeClassName={Styles.selectedRoute} to="/Home">
+                  Home
+                </NavLink>
               </li>
-              <li>
-                <NavLink to="/product">Products</NavLink>
+              <li className={Styles.homeProductNavListItem}>
+                <NavLink activeClassName={Styles.selectedRoute} to="/product">
+                  Products
+                </NavLink>
               </li>
             </ul>
           </nav>
         </div>
-        <div className="sigin-cart-container">
+        <div className={Styles.siginCartContainer}>
           <div>
             <ul>
-              <li>
-                <a href="#">SignIn</a>
+              <li className={Styles.siginCartContainerListItem}>
+                <NavLink activeClassName={Styles.selectedRoute} to="/Home">
+                  SignIn
+                </NavLink>
               </li>
-              <li>
-                <a href="#">Register</a>
+              <li className={Styles.siginCartContainerListItem}>
+                <NavLink activeClassName={Styles.selectedRoute} to="/Home">
+                  Register
+                </NavLink>
               </li>
             </ul>
           </div>
-          <button className="cart-button">
-            <img src={cart} alt="Common Hoope !" />
-            <span>0 Items</span>
+          <button className={Styles.cartButton}>
+            <img className={Styles.cartButtonImg} src={cart} alt="Cart" />
+            <span className={Styles.cartButtonSpan}>0 Items</span>
           </button>
         </div>
       </div>

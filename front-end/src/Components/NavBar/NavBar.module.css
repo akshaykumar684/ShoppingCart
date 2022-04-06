@@ -1,40 +1,20 @@
-header {
-  min-height: 100px;
-  width: 100%;
-  box-shadow: 5px 5px 5px gray;
-  margin-bottom: 20px;
-  position: fixed;
-  background-color: white;
-}
-
-.header-container {
+.headerContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.home-product-nav {
+.homeProductNav {
   margin-top: 50px;
 }
 
-.home-product-nav li {
+.homeProductNavListItem {
   display: inline;
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-  padding: 5px;
-  font-weight: bold;
-  color: brown;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.sigin-cart-container {
+.siginCartContainer {
   align-self: stretch;
   height: 100px;
   width: 150px;
@@ -42,13 +22,13 @@ a:hover {
   position: relative;
 }
 
-.sigin-cart-container li {
+.siginCartContainerListItem {
   display: inline;
   position: relative;
   left: 0;
 }
 
-.cart-button {
+.cartButton {
   width: 150px;
   height: 60px;
   position: absolute;
@@ -57,7 +37,7 @@ a:hover {
   border-style: none;
 }
 
-.cart-button img {
+.cartButtonImg {
   margin-left: 2px;
   height: 40px;
   width: 40px;
@@ -66,13 +46,17 @@ a:hover {
   margin-top: 8px;
 }
 
-.cart-button span {
+.cartButtonSpan {
   display: inline-block;
   margin-bottom: 10px;
   color: brown;
 }
 
-.logo-img {
+.logoImg {
   height: 80px;
   width: 170px;
+}
+
+.selectedRoute {
+  text-decoration: underline;
 }
