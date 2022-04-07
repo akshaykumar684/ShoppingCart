@@ -2,7 +2,14 @@ import logo from "../../../Resources/Images/logo.png";
 import { NavLink } from "react-router-dom";
 import Styles from "./NavBar.module.css";
 import CartButton from "../../UI/CartButton/CartButton";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../../Store/Redux-store";
 const NavBar = () => {
+  const disptach = useDispatch();
+
+  const showCartModal = () => {
+    disptach(cartActions.toggleCart());
+  };
   return (
     <header>
       <div className={Styles.headerContainer}>
@@ -39,9 +46,7 @@ const NavBar = () => {
             </ul>
           </div>
           <CartButton
-            onCartButtonClickedHandler={() =>
-              console.log("Cart Button Clicked")
-            }
+            onCartButtonClickedHandler={showCartModal}
             totalItemInCart="10"
           />
         </div>

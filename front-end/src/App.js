@@ -7,7 +7,9 @@ import React from "react";
 import Login from "./Components/Routes/Login/Login";
 import Signup from "./Components/Routes/Signup/Signup";
 import Modal from "./Components/Modal/Modal";
+import { useSelector } from "react-redux";
 function App() {
+  const isCartVisible = useSelector((state) => state.cart.isCartVisible);
   return (
     <React.Fragment>
       <NavBar />
@@ -27,10 +29,11 @@ function App() {
         <Route path="/signup" exact>
           <Signup />
         </Route>
-        <Route path="/cart" exact>
-          <Modal />
+        <Route path="*">
+          <Redirect to="/home" />
         </Route>
       </Switch>
+      {isCartVisible && <Modal />}
     </React.Fragment>
   );
 }
