@@ -12,8 +12,8 @@ const productsSlice = createSlice({
     loadProducts(state, payloadData) {
       const { payload } = payloadData;
       if (payload != null) {
-        state.isLoaded = true;
         state.products = payload;
+        state.isLoaded = true;
       }
     },
   },

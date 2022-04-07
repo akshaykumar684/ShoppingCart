@@ -10,16 +10,29 @@ import Modal from "./Components/Modal/Modal";
 import { useSelector, useDispatch } from "react-redux";
 import axiosFetch from "./axios/axios-congig";
 import { productSliceAction } from "./Store/ProductsStore/ProductsStoreSlice";
+import { productCategoriesAction } from "./Store/ProductCategoryStore/ProductCategoryStoreSlice";
 
 function App() {
   const disptach = useDispatch();
   useEffect(() => {
-    axiosFetch(`/products`).then((res) => {
-      const { status, data } = res;
-      if (status === 200) {
-        disptach(productSliceAction.loadProducts(data));
-      }
-    });
+    Promise.all([
+      (axiosFetch(`/products`)
+        .then((res) => {
+          const { status, data } = res;
+          if (status === 200) {
+            disptach(productSliceAction.loadProducts(data));
+          }
+        })
+        .catch((err) => console.log(err)),
+      axiosFetch(`/categories`)
+        .then((res) => {
+          const { status, data } = res;
+          if (status === 200) {
+            disptach(productCategoriesAction.loadProductCategories(data));
+          }
+        })
+        .catch((err) => console.log(err))),
+    ]);
   }, [disptach]);
   const isCartVisible = useSelector((state) => state.cart.isCartVisible);
   return (
@@ -30,6 +43,9 @@ function App() {
           <Home />
         </Route>
         <Route path="/product" exact>
+          <Product />
+        </Route>
+        <Route path="/product/:productId">
           <Product />
         </Route>
         <Route path="/" exact>

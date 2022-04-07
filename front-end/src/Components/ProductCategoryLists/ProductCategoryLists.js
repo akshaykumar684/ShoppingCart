@@ -1,21 +1,18 @@
 import "./ProductCategoryLists.css";
-import React, { useEffect, useState } from "react";
-import axiosFetch from "../../axios/axios-congig";
+import React from "react";
 import ProductCategory from "../ProductCategory/ProductCategory";
-
+import { useSelector } from "react-redux";
 const ProductCategoryLists = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [productCategories, setProductCategores] = useState([]);
-  useEffect(() => {
-    axiosFetch(`/categories`).then((res) => {
-      setProductCategores(res.data);
-      setIsLoading(false);
-    });
-  }, []);
+  const isProductCategoriesLoading = useSelector(
+    (state) => state.productCategories.isLoaded
+  );
+  const productCategories = useSelector(
+    (state) => state.productCategories.productCategories
+  );
   return (
     <React.Fragment>
-      {isLoading && <h1>Loading Product Categories</h1>}
-      {!isLoading &&
+      {!isProductCategoriesLoading && <h1>Loading Product Categories</h1>}
+      {isProductCategoriesLoading &&
         productCategories.map((productCategory) => (
           <ProductCategory
             key={productCategory.id}
