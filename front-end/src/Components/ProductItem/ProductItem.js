@@ -12,7 +12,7 @@ const ProductItem = ({ name, description, price }) => {
           src={appleImg}
           alt="Common Hoope !"
         />
-        <span>{description}</span>
+        <span className={Styles.description}>{description}</span>
       </div>
       <Button
         title={`Buy Now @ Rs ${price}`}
