@@ -23,6 +23,19 @@ header {
   top: 0;
 }
 
+.modalStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgba(155, 155, 155, 0.4);
+  position: absolute;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
