@@ -4,7 +4,7 @@ import CartItemList from "./CartItemLists/CartItemLists";
 
 const Cart = () => {
   return (
-    <div className="parent">
+    <div className="cart-parent">
       <div className="cart-container">
         <div className="cart-box-header">
           <h3>My Cart(1 item)</h3>
