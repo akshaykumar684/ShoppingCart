@@ -3,7 +3,7 @@ import React from "react";
 import ProductCategory from "../ProductCategory/ProductCategory";
 import { useSelector } from "react-redux";
 const ProductCategoryLists = () => {
-  const isProductCategoriesLoading = useSelector(
+  const isProductCategoriesLoaded = useSelector(
     (state) => state.productCategories.isLoaded
   );
   const productCategories = useSelector(
@@ -11,8 +11,8 @@ const ProductCategoryLists = () => {
   );
   return (
     <React.Fragment>
-      {!isProductCategoriesLoading && <h1>Loading Product Categories</h1>}
-      {isProductCategoriesLoading &&
+      {!isProductCategoriesLoaded && <h1>Loading Product Categories</h1>}
+      {isProductCategoriesLoaded &&
         productCategories.map((productCategory) => (
           <ProductCategory
             key={productCategory.id}
