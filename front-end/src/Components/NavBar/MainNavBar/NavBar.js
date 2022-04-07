@@ -1,7 +1,7 @@
 import logo from "../../../Resources/Images/logo.png";
-import cart from "../../../Resources/Images/cart.svg";
 import { NavLink } from "react-router-dom";
 import Styles from "./NavBar.module.css";
+import CartButton from "../../UI/CartButton/CartButton";
 const NavBar = () => {
   return (
     <header>
@@ -38,10 +38,12 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-          <button className={Styles.cartButton}>
-            <img className={Styles.cartButtonImg} src={cart} alt="Cart" />
-            <span className={Styles.cartButtonSpan}>0 Items</span>
-          </button>
+          <CartButton
+            onCartButtonClickedHandler={() =>
+              console.log("Cart Button Clicked")
+            }
+            totalItemInCart="10"
+          />
         </div>
       </div>
     </header>
