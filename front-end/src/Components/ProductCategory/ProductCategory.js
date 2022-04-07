@@ -13,7 +13,7 @@ const ProductCategory = ({ name, description, enabled, imageUrl }) => {
         <p>{description}</p>
         <Button
           isdisabled={!enabled}
-          title="Explore Beverages"
+          title={`Explore ${name}`}
           onClickHandler={() => console.log("btn clicked")}
         />
       </div>

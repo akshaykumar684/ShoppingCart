@@ -3,12 +3,24 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./Components/Routes/Home/Home";
 import Product from "./Components/Routes/Product/Product";
 import NavBar from "./Components/NavBar/MainNavBar/NavBar";
-import React from "react";
+import React, { useEffect } from "react";
 import Login from "./Components/Routes/Login/Login";
 import Signup from "./Components/Routes/Signup/Signup";
 import Modal from "./Components/Modal/Modal";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import axiosFetch from "./axios/axios-congig";
+import { productSliceAction } from "./Store/ProductsStore/ProductsStoreSlice";
+
 function App() {
+  const disptach = useDispatch();
+  useEffect(() => {
+    axiosFetch(`/products`).then((res) => {
+      const { status, data } = res;
+      if (status === 200) {
+        disptach(productSliceAction.loadProducts(data));
+      }
+    });
+  }, [disptach]);
   const isCartVisible = useSelector((state) => state.cart.isCartVisible);
   return (
     <React.Fragment>

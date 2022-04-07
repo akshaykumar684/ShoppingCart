@@ -1,5 +1,5 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
-
+import { productSliceReducer } from "./ProductsStore/ProductsStoreSlice";
 const initalCartState = {
   isCartVisible: false,
   totalItems: 0,
@@ -16,7 +16,7 @@ const cartSlice = createSlice({
 });
 
 const store = configureStore({
-  reducer: { cart: cartSlice.reducer },
+  reducer: { cart: cartSlice.reducer, product: productSliceReducer },
 });
 
 export const cartActions = cartSlice.actions;
