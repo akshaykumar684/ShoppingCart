@@ -1,13 +1,10 @@
 import "./CartHeader.css";
-import close from "../../../Resources/Images/Close-256.png";
-
+import CrossCloseButton from "../../UI/CrossCloseButton/CrossCloseButton";
 const CartHeader = () => {
   return (
     <div className="cart-box-header">
       <h3>My Cart(1 item)</h3>
-      <button onClick={() => console.log("closed")}>
-        <img src={close} alt="close" className="closeImg" />
-      </button>
+      <CrossCloseButton onCloseHandler={() => console.log("Modal Closed")} />
     </div>
   );
 };
