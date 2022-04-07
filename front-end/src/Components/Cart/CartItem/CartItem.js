@@ -1,6 +1,6 @@
 import "./CartItem.css";
 import apple from "../../../Resources/Images/apple.jpg";
-
+import RoundButton from "../../UI/RoundButton/RoundButton";
 const CartItem = () => {
   return (
     <div className="productItem-container">
@@ -8,9 +8,15 @@ const CartItem = () => {
       <div className="product-quantity">
         <h3>Apple-Washinton,Regular 4 Pcs</h3>
         <div>
-          <button className="add-remove-button">-</button>
+          <RoundButton
+            content="-"
+            onClickHanlder={() => console.log("item removed")}
+          />
           <span>1</span>
-          <button className="add-remove-button">+</button>
+          <RoundButton
+            content="+"
+            onClickHanlder={() => console.log("item added")}
+          />
           <span>X</span>
           <span>Rs 187</span>
         </div>

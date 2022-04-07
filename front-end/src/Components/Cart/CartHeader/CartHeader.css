@@ -1,0 +1,21 @@
+.cart-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  background-color: rgb(36, 31, 31);
+  color: white;
+}
+
+.cart-box-header h3 {
+  padding-left: 10px;
+}
+
+.cart-box-header button {
+  border-style: none;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  color: white;
+  padding-right: 25px;
+}

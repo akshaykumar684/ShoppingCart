@@ -1,0 +1,13 @@
+.checkOutButton {
+  width: 80%;
+  border-style: none;
+  height: 50px;
+  background-color: darkred;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 15px;
+  margin: 25px 0px 0px 45px;
+}
