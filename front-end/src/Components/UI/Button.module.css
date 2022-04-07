@@ -1,14 +1,4 @@
 .btn {
-  /* height: 40px;
-  width: auto;
-  max-width: 300px;
-  border-style: none;
-  background-color: darkred;
-  color: white;
-  font-weight: bold;
-  padding: 10px;
-  cursor: pointer; */
-
   border-style: none;
   height: 40px;
   width: 100%;
@@ -17,4 +7,5 @@
   color: white;
   font-weight: bold;
   max-width: 400px;
+  cursor: pointer;
 }
