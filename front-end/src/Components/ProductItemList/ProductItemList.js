@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const ProductItemList = ({ productCategoryId }) => {
   const isProductLoaded = useSelector((state) => state.product.isLoaded);
   let products = useSelector((state) => state.product.products);
-  if (isProductLoaded) {
+  if (isProductLoaded && productCategoryId) {
     products = products.filter((p) => p.category === productCategoryId);
   }
   return (
