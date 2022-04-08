@@ -1,27 +1,31 @@
 import "./CartItem.css";
 import apple from "../../../Resources/Images/apple.jpg";
 import RoundButton from "../../UI/RoundButton/RoundButton";
-const CartItem = () => {
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../../Store/Redux-store";
+const CartItem = ({ productInCart }) => {
+  const { name, price, quantity } = productInCart;
+  const dispatch = useDispatch();
+  const addItemInCart = () => {
+    dispatch(cartActions.addProductInCart(productInCart));
+  };
+  const removeItemFromCart = () => {
+    dispatch(cartActions.removeProductFromCart(productInCart));
+  };
   return (
     <div className="productItem-container">
       <img src={apple} alt="Common Hoope !" />
       <div className="product-quantity">
-        <h3>Apple-Washinton,Regular 4 Pcs</h3>
+        <h3>{name}</h3>
         <div>
-          <RoundButton
-            content="-"
-            onClickHanlder={() => console.log("item removed")}
-          />
-          <span>1</span>
-          <RoundButton
-            content="+"
-            onClickHanlder={() => console.log("item added")}
-          />
+          <RoundButton content="-" onClickHanlder={removeItemFromCart} />
+          <span>{quantity}</span>
+          <RoundButton content="+" onClickHanlder={addItemInCart} />
           <span>X</span>
-          <span>Rs 187</span>
+          <span>{`Rs ${price}`}</span>
         </div>
       </div>
-      <span>Rs 187</span>
+      <span>{`Rs ${price * quantity}`}</span>
     </div>
   );
 };

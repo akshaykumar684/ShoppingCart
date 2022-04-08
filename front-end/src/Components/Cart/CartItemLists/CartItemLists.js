@@ -1,12 +1,16 @@
 import Styles from "./CartItemList.module.css";
 import CartItem from "../CartItem/CartItem";
-
+import { useSelector } from "react-redux";
 const CartItemList = () => {
+  const totalItemInCarts = useSelector((state) => state.cart.totalItems);
+  const productsInCarts = useSelector((state) => state.cart.productsInCart);
   return (
     <div className={Styles.productItemContainerColl}>
-      {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
-        <CartItem key={index} />
-      ))}
+      {totalItemInCarts === 0 && <h3>Please start shopping</h3>}
+      {totalItemInCarts !== 0 &&
+        productsInCarts.map((productInCart) => (
+          <CartItem key={productInCart.id} productInCart={productInCart} />
+        ))}
     </div>
   );
 };
