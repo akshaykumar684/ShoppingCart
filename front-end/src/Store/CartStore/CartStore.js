@@ -4,6 +4,7 @@ const initalCartState = {
   isCartVisible: false,
   totalItems: 0,
   productsInCart: [],
+  totalItemsPriceInCart: 0,
 };
 
 const cartSlice = createSlice({
@@ -23,6 +24,7 @@ const cartSlice = createSlice({
         state.productsInCart.push(payload);
       }
       state.totalItems++;
+      state.totalItemsPriceInCart += payload.price;
     },
     removeProductFromCart(state, payloadData) {
       const { payload } = payloadData;
@@ -38,6 +40,7 @@ const cartSlice = createSlice({
           existingProduct.quantity--;
         }
         state.totalItems--;
+        state.totalItemsPriceInCart -= payload.price;
       }
     },
   },
