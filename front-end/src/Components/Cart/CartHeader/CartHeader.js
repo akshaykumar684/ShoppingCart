@@ -1,7 +1,7 @@
 import "./CartHeader.css";
 import CrossCloseButton from "../../UI/CrossCloseButton/CrossCloseButton";
 import { useSelector, useDispatch } from "react-redux";
-import { cartActions } from "../../../Store/Redux-store";
+import { cartActions } from "../../../Store/CartStore/CartStore";
 const CartHeader = () => {
   const disptach = useDispatch();
   const totalItemsInCart = useSelector((state) => state.cart.totalItems);

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Styles from "./NavBar.module.css";
 import CartButton from "../../UI/CartButton/CartButton";
 import { useSelector, useDispatch } from "react-redux";
-import { cartActions } from "../../../Store/Redux-store";
+import { cartActions } from "../../../Store/CartStore/CartStore";
 const NavBar = () => {
   const disptach = useDispatch();
   const totalItemsInCart = useSelector((state) => state.cart.totalItems);

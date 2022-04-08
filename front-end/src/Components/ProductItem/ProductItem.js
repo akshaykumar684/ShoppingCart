@@ -2,7 +2,7 @@ import Styles from "./ProductItem.module.css";
 import Button from "../UI/Button";
 import appleImg from "../../Resources/Images/apple.jpg";
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../Store/Redux-store";
+import { cartActions } from "../../Store/CartStore/CartStore";
 
 const ProductItem = ({ product }) => {
   const { name, description, price } = product;

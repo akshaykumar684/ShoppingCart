@@ -2,7 +2,7 @@ import "./CartItem.css";
 import apple from "../../../Resources/Images/apple.jpg";
 import RoundButton from "../../UI/RoundButton/RoundButton";
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../../Store/Redux-store";
+import { cartActions } from "../../../Store/CartStore/CartStore";
 const CartItem = ({ productInCart }) => {
   const { name, price, quantity } = productInCart;
   const dispatch = useDispatch();
