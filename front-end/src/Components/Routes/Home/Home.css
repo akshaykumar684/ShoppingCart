@@ -3,9 +3,8 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  z-index: -1;
+  /* z-index: -1; */
   background-color: white;
-  /* width: 80%; */
 }
 
 .articleContainer {

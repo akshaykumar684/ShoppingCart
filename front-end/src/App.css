@@ -12,3 +12,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+header {
+  z-index: 10;
+}
