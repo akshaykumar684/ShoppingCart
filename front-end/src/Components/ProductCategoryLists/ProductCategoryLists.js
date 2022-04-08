@@ -20,6 +20,7 @@ const ProductCategoryLists = () => {
             description={productCategory.description}
             imageUrl={productCategory.imageUrl}
             enabled={productCategory.enabled}
+            productCategoryId={productCategory.id}
           />
         ))}
     </React.Fragment>

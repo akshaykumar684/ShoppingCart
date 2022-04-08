@@ -20,7 +20,10 @@ function App() {
         .then((res) => {
           const { status, data } = res;
           if (status === 200) {
-            disptach(productSliceAction.loadProducts(data));
+            const product = data.map((p) => {
+              return { ...p, quantity: 0 };
+            });
+            disptach(productSliceAction.loadProducts(product));
           }
         })
         .catch((err) => console.log(err)),

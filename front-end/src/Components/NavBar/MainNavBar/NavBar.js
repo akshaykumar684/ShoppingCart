@@ -2,10 +2,11 @@ import logo from "../../../Resources/Images/logo.png";
 import { NavLink } from "react-router-dom";
 import Styles from "./NavBar.module.css";
 import CartButton from "../../UI/CartButton/CartButton";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../../Store/Redux-store";
 const NavBar = () => {
   const disptach = useDispatch();
+  const totalItemsInCart = useSelector((state) => state.cart.totalItems);
 
   const showCartModal = () => {
     disptach(cartActions.toggleCart());
@@ -47,7 +48,7 @@ const NavBar = () => {
           </div>
           <CartButton
             onCartButtonClickedHandler={showCartModal}
-            totalItemInCart="10"
+            totalItemInCart={totalItemsInCart}
           />
         </div>
       </div>

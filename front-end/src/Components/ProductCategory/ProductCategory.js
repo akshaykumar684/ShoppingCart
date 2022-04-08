@@ -1,10 +1,19 @@
 import Beverages from "../../Resources/Images/beverages.png";
 import Button from "../UI/Button";
 import Styles from "./ProductCategory.module.css";
-
+import { useHistory } from "react-router-dom";
 //const baseUrl = "http://localhost:3000";
-const ProductCategory = ({ name, description, enabled, imageUrl }) => {
-  //console.log(baseUrl.concat(imageUrl));
+const ProductCategory = ({
+  name,
+  description,
+  enabled,
+  imageUrl,
+  productCategoryId,
+}) => {
+  const history = useHistory();
+  const navigateToProductCategory = () => {
+    history.push(`/product/${productCategoryId}`);
+  };
   return (
     <section className={Styles.category}>
       <img className={Styles.categoryImg} src={Beverages} alt="Offer" />
@@ -14,7 +23,7 @@ const ProductCategory = ({ name, description, enabled, imageUrl }) => {
         <Button
           isdisabled={!enabled}
           title={`Explore ${name}`}
-          onClickHandler={() => console.log("btn clicked")}
+          onClickHandler={navigateToProductCategory}
         />
       </div>
     </section>

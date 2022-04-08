@@ -12,12 +12,7 @@ const ProductItemList = ({ productCategoryId }) => {
       {!isProductLoaded && <h1>Loading Products...</h1>}
       {isProductLoaded &&
         products.map((product) => (
-          <ProductItem
-            key={product.id}
-            name={product.name}
-            description={product.description}
-            price={product.price}
-          />
+          <ProductItem key={product.id} product={product} />
         ))}
     </article>
   );

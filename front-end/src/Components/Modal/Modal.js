@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Cart from "../Cart/Cart";
-import { useEffect } from "react";
-import axios from "../../axios/axios-congig";
-
+import { useSelector } from "react-redux";
 const Modal = () => {
-  useEffect(() => {
-    document.body.setAttribute("style", "overflow:hidden");
-    axios
-      .get(`/banners`)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
-    return () => document.body.setAttribute("style", "overflow:auto");
-  }, []);
+  const totalItemInCarts = useSelector((state) => state.cart.totalItems);
+  const productsInCarts = useSelector((state) => state.cart.productsInCart);
+  console.log(`TotalItems in Cart : ${totalItemInCarts}`);
+  console.log(`Products in Cart`);
+  productsInCarts.forEach((element) => {
+    console.log(element);
+  });
+
   return (
     <React.Fragment>
       {ReactDOM.createPortal(<Cart />, document.getElementById("modal"))};

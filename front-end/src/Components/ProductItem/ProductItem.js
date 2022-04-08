@@ -1,8 +1,16 @@
 import Styles from "./ProductItem.module.css";
 import Button from "../UI/Button";
 import appleImg from "../../Resources/Images/apple.jpg";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../Store/Redux-store";
 
-const ProductItem = ({ name, description, price }) => {
+const ProductItem = ({ product }) => {
+  const { name, description, price } = product;
+  const dispatch = useDispatch();
+  //console.log(product);
+  const addItemInCart = () => {
+    dispatch(cartActions.addProductInCart({ ...product }));
+  };
   return (
     <section className={Styles.productCard}>
       <h1 className={Styles.productCardHeader}>{name}</h1>
@@ -14,10 +22,7 @@ const ProductItem = ({ name, description, price }) => {
         />
         <span className={Styles.description}>{description}</span>
       </div>
-      <Button
-        title={`Buy Now @ Rs ${price}`}
-        onClickHandler={() => console.log("Clicked")}
-      />
+      <Button title={`Buy Now @ Rs ${price}`} onClickHandler={addItemInCart} />
     </section>
   );
 };
