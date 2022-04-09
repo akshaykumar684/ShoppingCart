@@ -55,3 +55,9 @@ input:not(:focus):valid + .floating-label {
   color: #404040;
   outline: none;
 }
+
+.error-label {
+  color: darkred;
+  font-size: medium;
+  margin-top: -20px;
+}
