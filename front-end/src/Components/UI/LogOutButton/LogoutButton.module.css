@@ -1,0 +1,7 @@
+.logOutButton {
+  border-style: none;
+  color: green;
+  cursor: pointer;
+  position: relative;
+  display: inline;
+}

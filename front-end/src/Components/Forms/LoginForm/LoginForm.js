@@ -30,7 +30,7 @@ const LoginForm = () => {
       return;
     }
 
-    dispatch(userActions.loginAndAuthenticateUser());
+    dispatch(userActions.loginAndAuthenticateUser(username));
     history.push("/product");
   };
 
