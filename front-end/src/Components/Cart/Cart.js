@@ -21,11 +21,9 @@ const Cart = () => {
       history.push("/login");
       return;
     }
-    console.log("procedding to check out");
     axiosFetch
       .post("/addToCart")
       .then((response) => {
-        console.log(response.status);
         const { status, data } = response;
         if (status === 200) {
           dispatch(cartActions.toggleCart());

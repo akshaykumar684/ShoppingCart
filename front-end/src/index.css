@@ -24,7 +24,7 @@ header {
 }
 
 .modalStyle {
-  z-index: 2;
+  z-index: 22;
   top: 0;
   left: 0;
   background-color: rgba(155, 155, 155, 0.4);
