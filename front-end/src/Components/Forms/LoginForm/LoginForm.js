@@ -32,7 +32,6 @@ const LoginForm = () => {
 
     dispatch(userActions.loginAndAuthenticateUser());
     history.push("/product");
-    console.log(loginFormData);
   };
 
   const loginFormInputDataChangeHandler = (event) => {

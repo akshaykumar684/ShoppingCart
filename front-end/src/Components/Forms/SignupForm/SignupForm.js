@@ -66,7 +66,6 @@ const SignupForm = () => {
     setSignUpFormData(initialSignupFormData);
     setShowSuccessLabel(true);
     setSuccessMsg(messages.accountCreatedSuccessfully);
-    console.log("form submitted");
   };
   return (
     <section className="signup-form">

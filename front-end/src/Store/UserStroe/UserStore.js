@@ -2,7 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initalUserStore = {
   isLoggedIn: false,
-  registeredUsers: [],
+  registeredUsers: [
+    {
+      email: "akshay@gmail.com",
+      firstName: "Akshay",
+      lastName: "Kumar",
+      password: "12345",
+    },
+  ],
 };
 
 const userSlice = createSlice({
@@ -14,6 +21,7 @@ const userSlice = createSlice({
     },
     registerNewUser(state, payloadData) {
       const { payload } = payloadData;
+      console.log(payload);
       state.registeredUsers.push(payload);
     },
   },
