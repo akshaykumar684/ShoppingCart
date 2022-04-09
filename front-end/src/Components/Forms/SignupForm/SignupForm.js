@@ -1,6 +1,15 @@
 import { useState } from "react";
 import "./SignupForm.css";
 import Button from "../../UI/Button";
+import { useSelector, useDispatch } from "react-redux";
+import { userActions } from "../../../Store/UserStroe/UserStore";
+
+const messages = {
+  pswdMisMatch: "Passowrd mismatch.",
+  emailAlreadyRegistered: "Email Already registered.",
+  accountCreatedSuccessfully: "Account created sucessfully.",
+};
+
 const initialSignupFormData = {
   firstName: "",
   lastName: "",
@@ -8,12 +17,31 @@ const initialSignupFormData = {
   password: "",
   confirmPassword: "",
 };
+
 const SignupForm = () => {
   const [signUPFormData, setSignUpFormData] = useState(initialSignupFormData);
+  const [showErrorLabel, setShowErrorLabel] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const [showSuccessLabel, setShowSuccessLabel] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+  const dispatch = useDispatch();
+  const registeredUsersList = useSelector(
+    (state) => state.users.registeredUsers
+  );
+
   const { firstName, lastName, email, password, confirmPassword } =
     signUPFormData;
 
   const signupFormDataChangeHandler = (event) => {
+    if (showSuccessLabel) {
+      setShowSuccessLabel(false);
+      setSuccessMsg("");
+    }
+    if (showErrorLabel) {
+      setShowErrorLabel(false);
+      setErrorMsg("");
+    }
     const formData = {
       ...signUPFormData,
       [event.target.name]: event.target.value,
@@ -23,7 +51,22 @@ const SignupForm = () => {
 
   const signUpHandler = (event) => {
     event.preventDefault();
-    console.log(signUPFormData);
+    if (password !== confirmPassword) {
+      setErrorMsg(messages.pswdMisMatch);
+      setShowErrorLabel(true);
+      return;
+    }
+
+    if (registeredUsersList.findIndex((user) => user.email === email) !== -1) {
+      setErrorMsg(messages.emailAlreadyRegistered);
+      setShowErrorLabel(true);
+      return;
+    }
+    dispatch(userActions.registerNewUser(signUPFormData));
+    setSignUpFormData(initialSignupFormData);
+    setShowSuccessLabel(true);
+    setSuccessMsg(messages.accountCreatedSuccessfully);
+    console.log("form submitted");
   };
   return (
     <section className="signup-form">
@@ -86,6 +129,8 @@ const SignupForm = () => {
           />
           <label className="floating-label">Confirm Password</label>
         </div>
+        {showErrorLabel && <p className="error-label">{errorMsg}</p>}
+        {showSuccessLabel && <p className="success-label">{successMsg}</p>}
         <Button title="Signup" btnType="submit" />
       </form>
     </section>

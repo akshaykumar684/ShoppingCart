@@ -40,6 +40,7 @@ input {
   font-size: 13px;
   color: #6d6d6d;
   position: absolute;
+  height: 20px;
   top: -15px;
   left: 0px;
   transition: all 0.3s ease;
@@ -54,4 +55,16 @@ input:not(:focus):valid + .floating-label {
   opacity: 1;
   color: #404040;
   outline: none;
+}
+
+.error-label {
+  color: darkred;
+  font-size: medium;
+  margin-top: -20px;
+}
+
+.success-label {
+  color: darkgreen;
+  font-size: medium;
+  margin-top: -20px;
 }
