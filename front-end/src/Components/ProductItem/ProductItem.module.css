@@ -8,6 +8,8 @@
 .productCardHeader {
   text-align: center;
   padding: 10px;
+  height: 40px;
+  overflow: scroll;
 }
 
 .produtDescription {

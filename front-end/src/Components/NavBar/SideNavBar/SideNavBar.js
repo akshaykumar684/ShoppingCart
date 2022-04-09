@@ -5,6 +5,7 @@ const SideNavBar = () => {
   const isProductCategoriesLoaded = useSelector(
     (state) => state.productCategories.isLoaded
   );
+
   const productCategories = useSelector(
     (state) => state.productCategories.productCategories
   );
@@ -12,16 +13,18 @@ const SideNavBar = () => {
     <aside className={Styles.container}>
       {isProductCategoriesLoaded && (
         <ul>
-          {productCategories.map((productCategory) => (
-            <li className={Styles.listContainer} key={productCategory.id}>
-              <NavLink
-                activeClassName={Styles.selectedRoute}
-                to={`/product/${productCategory.id}`}
-              >
-                {productCategory.name}
-              </NavLink>
-            </li>
-          ))}
+          {productCategories
+            .filter((productCategory) => productCategory.enabled)
+            .map((productCategory) => (
+              <li className={Styles.listContainer} key={productCategory.id}>
+                <NavLink
+                  activeClassName={Styles.selectedRoute}
+                  to={`/product/${productCategory.id}`}
+                >
+                  {productCategory.name}
+                </NavLink>
+              </li>
+            ))}
         </ul>
       )}
     </aside>
