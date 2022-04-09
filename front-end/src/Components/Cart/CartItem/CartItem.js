@@ -14,7 +14,7 @@ const CartItem = ({ productInCart }) => {
   };
   return (
     <div className="productItem-container">
-      <img src={apple} alt="Common Hoope !" />
+      <img src={apple} alt="product apple" />
       <div className="product-quantity">
         <h3>{name}</h3>
         <div>

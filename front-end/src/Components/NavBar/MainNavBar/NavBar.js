@@ -16,6 +16,7 @@ const NavBar = () => {
 
   const showCartModal = () => {
     disptach(cartActions.toggleCart());
+    document.documentElement.scrollTop = 0; // check
   };
 
   const logOutUserHandler = () => {

@@ -18,7 +18,7 @@ const ProductItem = ({ product }) => {
         <img
           className={Styles.produtDescriptionImg}
           src={appleImg}
-          alt="Common Hoope !"
+          alt="product-apple"
         />
         <span className={Styles.description}>{description}</span>
       </div>
