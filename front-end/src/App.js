@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axiosFetch from "./axios/axios-congig";
 import { productSliceAction } from "./Store/ProductsStore/ProductsStoreSlice";
 import { productCategoriesAction } from "./Store/ProductCategoryStore/ProductCategoryStoreSlice";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const disptach = useDispatch();
@@ -64,6 +65,7 @@ function App() {
           <Redirect to="/home" />
         </Route>
       </Switch>
+      <Footer />
       {isCartVisible && <Modal />}
     </React.Fragment>
   );
