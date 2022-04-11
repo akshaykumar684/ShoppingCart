@@ -1,4 +1,3 @@
-import Beverages from "../../Resources/Images/beverages.png";
 import Button from "../UI/Button";
 import Styles from "./ProductCategory.module.css";
 import { useHistory } from "react-router-dom";
@@ -17,7 +16,7 @@ const ProductCategory = ({
 
   return (
     <section className={Styles.category}>
-      <img className={Styles.categoryImg} src={Beverages} alt="Offer" />
+      <img className={Styles.categoryImg} src={imageUrl} alt="Offer" />
       <div className={Styles.productDescription}>
         <h3>{name}</h3>
         <p>{description}</p>

@@ -1,11 +1,10 @@
 import Styles from "./ProductItem.module.css";
 import Button from "../UI/Button";
-import appleImg from "../../Resources/Images/apple.jpg";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Store/CartStore/CartStore";
 
 const ProductItem = ({ product }) => {
-  const { name, description, price } = product;
+  const { name, description, price, imageURL } = product;
   const dispatch = useDispatch();
   const addItemInCart = () => {
     dispatch(cartActions.addProductInCart({ ...product }));
@@ -17,7 +16,7 @@ const ProductItem = ({ product }) => {
       <div className={Styles.produtDescription}>
         <img
           className={Styles.produtDescriptionImg}
-          src={appleImg}
+          src={imageURL}
           alt="product-apple"
         />
         <span className={Styles.description}>{description}</span>

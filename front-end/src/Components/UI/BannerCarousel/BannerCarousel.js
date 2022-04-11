@@ -1,6 +1,5 @@
 import "./BannerCarousel.css";
 import { useState, useEffect } from "react";
-import Offer5 from "../../../Resources/Images/offer5.jpg";
 import axiosFetch from "../../../axios/axios-congig";
 
 const BannerCarousel = () => {
@@ -12,7 +11,6 @@ const BannerCarousel = () => {
       .then((res) => {
         const { status, data } = res;
         if (status === 200) {
-          console.log(data);
           setBanners(data);
           setIsBannerLoaded(true);
         }
@@ -27,8 +25,8 @@ const BannerCarousel = () => {
         banners.map((banner) => (
           <img
             key={banner.id}
-            src={Offer5}
-            alt="offer banner"
+            src={banner.bannerImageUrl}
+            alt={banner.bannerImageAlt}
             className="caurosel-Img"
           />
         ))}

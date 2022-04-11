@@ -1,11 +1,10 @@
 import "./CartItem.css";
-import apple from "../../../Resources/Images/apple.jpg";
 import RoundButton from "../../UI/RoundButton/RoundButton";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../Store/CartStore/CartStore";
 
 const CartItem = ({ productInCart }) => {
-  const { name, price, quantity } = productInCart;
+  const { name, price, quantity, imageURL } = productInCart;
   const dispatch = useDispatch();
 
   const addItemInCart = () => {
@@ -18,7 +17,7 @@ const CartItem = ({ productInCart }) => {
 
   return (
     <div className="productItem-container">
-      <img src={apple} alt="product apple" />
+      <img src={imageURL} alt="product apple" />
       <div className="product-quantity">
         <h3>{name}</h3>
         <div>
