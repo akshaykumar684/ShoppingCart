@@ -9,36 +9,24 @@ import Signup from "./Components/Routes/Signup/Signup";
 import Modal from "./Components/Modal/Modal";
 import { useSelector, useDispatch } from "react-redux";
 import axiosFetch from "./axios/axios-congig";
-import { productSliceAction } from "./Store/ProductsStore/ProductsStoreSlice";
 import { productCategoriesAction } from "./Store/ProductCategoryStore/ProductCategoryStoreSlice";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
   const disptach = useDispatch();
   useEffect(() => {
-    Promise.all([
-      (axiosFetch(`/products`)
-        .then((res) => {
-          const { status, data } = res;
-          if (status === 200) {
-            const product = data.map((p) => {
-              return { ...p, quantity: 0 };
-            });
-            disptach(productSliceAction.loadProducts(product));
-          }
-        })
-        .catch((err) => console.log(err)),
-      axiosFetch(`/categories`)
-        .then((res) => {
-          const { status, data } = res;
-          if (status === 200) {
-            disptach(productCategoriesAction.loadProductCategories(data));
-          }
-        })
-        .catch((err) => console.log(err))),
-    ]);
+    axiosFetch(`/categories`)
+      .then((res) => {
+        const { status, data } = res;
+        if (status === 200) {
+          disptach(productCategoriesAction.loadProductCategories(data));
+        }
+      })
+      .catch((err) => console.log(err));
   }, [disptach]);
+
   const isCartVisible = useSelector((state) => state.cart.isCartVisible);
+
   return (
     <React.Fragment>
       <NavBar />

@@ -1,4 +1,5 @@
 .productItemContainerColl {
   height: 76%;
   overflow-y: auto;
+  text-align: center;
 }
