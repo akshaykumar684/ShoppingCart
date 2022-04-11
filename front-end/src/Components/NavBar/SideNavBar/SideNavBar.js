@@ -1,6 +1,7 @@
 import Styles from "./SideNavBar.module.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 const SideNavBar = () => {
   const isProductCategoriesLoaded = useSelector(
     (state) => state.productCategories.isLoaded
@@ -9,6 +10,7 @@ const SideNavBar = () => {
   const productCategories = useSelector(
     (state) => state.productCategories.productCategories
   );
+
   return (
     <aside className={Styles.container}>
       {isProductCategoriesLoaded && (

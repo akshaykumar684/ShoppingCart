@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../../Store/CartStore/CartStore";
 import { userActions } from "../../../Store/UserStroe/UserStore";
 import LogOutButton from "../../UI/LogOutButton/LogOutButton";
+
 const NavBar = () => {
   const disptach = useDispatch();
   const totalItemsInCart = useSelector((state) => state.cart.totalItems);
@@ -22,6 +23,7 @@ const NavBar = () => {
   const logOutUserHandler = () => {
     disptach(userActions.logOutUser());
   };
+
   return (
     <header>
       <div className={Styles.headerContainer}>

@@ -52,9 +52,6 @@ function App() {
         <Route path="/product/:productCategoryId" exact>
           <Product />
         </Route>
-        <Route path="/" exact>
-          <Redirect to="/home" />
-        </Route>
         <Route path="/login" exact>
           <Login />
         </Route>

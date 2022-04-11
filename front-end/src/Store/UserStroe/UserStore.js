@@ -16,6 +16,7 @@ const initalUserStore = {
 const userSlice = createSlice({
   name: "userSlice",
   initialState: initalUserStore,
+
   reducers: {
     loginAndAuthenticateUser(state, payloadData) {
       const { payload } = payloadData;
@@ -24,11 +25,13 @@ const userSlice = createSlice({
         (u) => u.email === payload
       ).firstName;
     },
+
     registerNewUser(state, payloadData) {
       const { payload } = payloadData;
       console.log(payload);
       state.registeredUsers.push(payload);
     },
+
     logOutUser(state) {
       state.isLoggedIn = false;
     },

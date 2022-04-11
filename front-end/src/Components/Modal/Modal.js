@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import Cart from "../Cart/Cart";
+
 const Modal = () => {
   useEffect(() => {
     document.body.style.overflowY = "hidden";

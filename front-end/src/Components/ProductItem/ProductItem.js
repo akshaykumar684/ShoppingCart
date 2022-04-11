@@ -7,10 +7,10 @@ import { cartActions } from "../../Store/CartStore/CartStore";
 const ProductItem = ({ product }) => {
   const { name, description, price } = product;
   const dispatch = useDispatch();
-  //console.log(product);
   const addItemInCart = () => {
     dispatch(cartActions.addProductInCart({ ...product }));
   };
+
   return (
     <section className={Styles.productCard}>
       <h1 className={Styles.productCardHeader}>{name}</h1>

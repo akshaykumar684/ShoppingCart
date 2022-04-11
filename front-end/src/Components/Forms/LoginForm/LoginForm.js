@@ -4,10 +4,12 @@ import Button from "../../UI/Button";
 import { useSelector, useDispatch } from "react-redux";
 import { userActions } from "../../../Store/UserStroe/UserStore";
 import { useHistory } from "react-router-dom";
+
 const initialLoginFormData = {
   username: "",
   password: "",
 };
+
 const LoginForm = () => {
   const [loginFormData, setLoginFormData] = useState(initialLoginFormData);
   const [showErrorLabel, setShowErrorLabel] = useState(false);
@@ -41,6 +43,7 @@ const LoginForm = () => {
     };
     setLoginFormData(formData);
   };
+
   return (
     <section className="login-form">
       <form onSubmit={loginHandler}>

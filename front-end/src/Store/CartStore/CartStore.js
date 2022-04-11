@@ -10,10 +10,12 @@ const initalCartState = {
 const cartSlice = createSlice({
   name: "cartSlice",
   initialState: initalCartState,
+
   reducers: {
     toggleCart(state) {
       state.isCartVisible = !state.isCartVisible;
     },
+
     addProductInCart(state, payloadData) {
       const { payload } = payloadData;
       const product = state.productsInCart.find((p) => p.id === payload.id);
@@ -26,6 +28,7 @@ const cartSlice = createSlice({
       state.totalItems++;
       state.totalItemsPriceInCart += payload.price;
     },
+
     removeProductFromCart(state, payloadData) {
       const { payload } = payloadData;
       const existingProduct = state.productsInCart.find(

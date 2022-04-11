@@ -38,10 +38,12 @@ const SignupForm = () => {
       setShowSuccessLabel(false);
       setSuccessMsg("");
     }
+
     if (showErrorLabel) {
       setShowErrorLabel(false);
       setErrorMsg("");
     }
+
     const formData = {
       ...signUPFormData,
       [event.target.name]: event.target.value,
@@ -51,6 +53,7 @@ const SignupForm = () => {
 
   const signUpHandler = (event) => {
     event.preventDefault();
+
     if (password !== confirmPassword) {
       setErrorMsg(messages.pswdMisMatch);
       setShowErrorLabel(true);
@@ -62,6 +65,7 @@ const SignupForm = () => {
       setShowErrorLabel(true);
       return;
     }
+
     dispatch(userActions.registerNewUser(signUPFormData));
     setSignUpFormData(initialSignupFormData);
     setShowSuccessLabel(true);

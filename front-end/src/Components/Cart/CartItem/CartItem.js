@@ -3,15 +3,19 @@ import apple from "../../../Resources/Images/apple.jpg";
 import RoundButton from "../../UI/RoundButton/RoundButton";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../Store/CartStore/CartStore";
+
 const CartItem = ({ productInCart }) => {
   const { name, price, quantity } = productInCart;
   const dispatch = useDispatch();
+
   const addItemInCart = () => {
     dispatch(cartActions.addProductInCart(productInCart));
   };
+
   const removeItemFromCart = () => {
     dispatch(cartActions.removeProductFromCart(productInCart));
   };
+
   return (
     <div className="productItem-container">
       <img src={apple} alt="product apple" />

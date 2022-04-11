@@ -15,12 +15,14 @@ const Cart = () => {
   );
 
   const isLoggedIn = useSelector((state) => state.users.isLoggedIn);
+
   const proceedToCheckOutHandler = () => {
     if (!isLoggedIn) {
       dispatch(cartActions.toggleCart());
       history.push("/login");
       return;
     }
+
     axiosFetch
       .post("/addToCart")
       .then((response) => {
@@ -34,6 +36,7 @@ const Cart = () => {
         alert("Something Went Wrong.");
       });
   };
+
   return (
     <div className="cart-parent">
       <div className="cart-container">

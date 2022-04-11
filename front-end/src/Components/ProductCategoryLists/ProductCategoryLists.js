@@ -2,13 +2,16 @@ import "./ProductCategoryLists.css";
 import React from "react";
 import ProductCategory from "../ProductCategory/ProductCategory";
 import { useSelector } from "react-redux";
+
 const ProductCategoryLists = () => {
   const isProductCategoriesLoaded = useSelector(
     (state) => state.productCategories.isLoaded
   );
+
   const productCategories = useSelector(
     (state) => state.productCategories.productCategories
   );
+
   return (
     <React.Fragment>
       {!isProductCategoriesLoaded && <h1>Loading Product Categories</h1>}

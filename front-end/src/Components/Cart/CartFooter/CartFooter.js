@@ -1,5 +1,6 @@
 import Styles from "./CartFooter.module.css";
 import CheckoutButton from "../../UI/CheckOutButton/CheckoutButton";
+
 const CartFooter = ({ totalItemsPriceInCart, proceedToCheckOutHandler }) => {
   return (
     <div className={Styles.cartBoxFooter}>

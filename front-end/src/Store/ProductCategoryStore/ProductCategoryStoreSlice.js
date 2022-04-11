@@ -8,6 +8,7 @@ const initialProductCategoryState = {
 const productCategoriesSlice = createSlice({
   name: "productCategoriesSlice",
   initialState: initialProductCategoryState,
+
   reducers: {
     loadProductCategories(state, payloadData) {
       const { payload } = payloadData;

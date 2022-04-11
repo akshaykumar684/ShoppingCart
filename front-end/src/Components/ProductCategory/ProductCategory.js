@@ -2,7 +2,7 @@ import Beverages from "../../Resources/Images/beverages.png";
 import Button from "../UI/Button";
 import Styles from "./ProductCategory.module.css";
 import { useHistory } from "react-router-dom";
-//const baseUrl = "http://localhost:3000";
+
 const ProductCategory = ({
   name,
   description,
@@ -14,6 +14,7 @@ const ProductCategory = ({
   const navigateToProductCategory = () => {
     history.push(`/product/${productCategoryId}`);
   };
+
   return (
     <section className={Styles.category}>
       <img className={Styles.categoryImg} src={Beverages} alt="Offer" />

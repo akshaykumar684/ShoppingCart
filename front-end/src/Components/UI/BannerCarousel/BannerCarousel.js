@@ -2,9 +2,11 @@ import "./BannerCarousel.css";
 import { useState, useEffect } from "react";
 import Offer5 from "../../../Resources/Images/offer5.jpg";
 import axiosFetch from "../../../axios/axios-congig";
+
 const BannerCarousel = () => {
   const [isBannerLoaded, setIsBannerLoaded] = useState(false);
   const [banners, setBanners] = useState(null);
+
   useEffect(() => {
     axiosFetch(`/banners`)
       .then((res) => {
@@ -17,6 +19,7 @@ const BannerCarousel = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+
   return (
     <div className="slides">
       {!isBannerLoaded && <p>Loading...</p>}
