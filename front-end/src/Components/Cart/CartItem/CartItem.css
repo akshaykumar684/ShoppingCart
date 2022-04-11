@@ -25,6 +25,8 @@
 
 .product-quantity > h3 {
   margin-top: 15px;
+  overflow-y: scroll;
+  height: 43px;
 }
 
 .product-quantity div {
@@ -32,4 +34,5 @@
   gap: 10px;
   align-items: center;
   margin-top: 8px;
+  justify-content: center;
 }
