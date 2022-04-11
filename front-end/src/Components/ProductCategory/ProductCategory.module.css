@@ -18,3 +18,7 @@
   align-items: center;
   padding: 15px;
 }
+
+.category:nth-child(odd) .productDescription {
+  order: -1;
+}
